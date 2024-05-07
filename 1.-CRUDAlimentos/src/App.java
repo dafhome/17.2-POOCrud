@@ -2,6 +2,8 @@ import java.util.ArrayList;
 import java.util.Scanner;
 
 public class App {
+    static final String SEPARADOR = "------------------------------------------------------------";
+
     public static void main(String[] args) throws Exception {
         Scanner scan = new Scanner(System.in);
         ArrayList<Alimentos> tienda = new ArrayList<>();
@@ -15,7 +17,7 @@ public class App {
 
         System.out.println();
         System.out.println("Bienvenido a la tienda de alimentación");
-        System.out.println("------------------------------------------------------------");
+        System.out.println(SEPARADOR);
         int opcion = 0;
         boolean validar = false;
         while (!validar) {
@@ -40,10 +42,12 @@ public class App {
                     break;
                 case 6:
                     Alimentos.moveAlimento(scan, tienda);
-                    System.out.println("------------------------------------------------------------");
+                    System.out.println(SEPARADOR);
 
                     break;
                 case 0:
+                    System.out.println();
+                    System.out.println("Gracias por venir! Nos vemos otro día.");
                     validar = true;
                     break;
                 default:
@@ -65,7 +69,7 @@ public class App {
         System.out.println("5.Borrar un producto");
         System.out.println("6.Mover producto a otra 'balda'");
         System.out.println("0.Salir");
-        System.out.println("------------------------------------------------------------");
+        System.out.println(SEPARADOR);
         System.out.print("Opcion: ");
     }
 }

@@ -1,4 +1,3 @@
-import java.lang.reflect.Array;
 import java.util.ArrayList;
 import java.util.Scanner;
 
@@ -9,6 +8,7 @@ public class Alimentos {
     private double peso;
     private double precioKg;
     private double precio;
+    static final String SEPARADOR = "------------------------------------------------------------";
 
     public Alimentos(String nombre, String origen, double peso, double precioKg) {
         this.nombre = nombre;
@@ -103,7 +103,7 @@ public class Alimentos {
             System.out.println(alimento);
         }
         System.out.println();
-        System.out.println("------------------------------------------------------------");
+        System.out.println(SEPARADOR);
 
     }
 
@@ -125,7 +125,7 @@ public class Alimentos {
         }
         if (cont > 0) {
             if (cont < 2) {
-                System.out.println("El alimento buscado está en la posición "+(index+1)+" y es el siguiente:");
+                System.out.println("El alimento buscado está en la posición " + (index + 1) + " y es el siguiente:");
                 System.out.println(carro.get(index));
             } else {
                 System.out.println("Lo siento, hay más de un alimento que se llaman igual.");
@@ -133,7 +133,7 @@ public class Alimentos {
         } else {
             System.out.println("No he encontrado ningún alimento con este nombre.");
         }
-        System.out.println("------------------------------------------------------------");
+        System.out.println(SEPARADOR);
     }
 
     private static int searchAlimentoReturn(Scanner scan, ArrayList<Alimentos> carro) {
@@ -202,18 +202,15 @@ public class Alimentos {
                     case "0":
                         System.out.print("Alimento: ");
                         carro.get(index).setNombre(scan.nextLine());
-                        validar = true;
                         System.out.print("Origen: ");
                         carro.get(index).setOrigen(scan.nextLine());
-                        validar = true;
                         System.out.print("Peso: ");
                         valor = Metodos.validarDouble(scan);
                         carro.get(index).setPeso(valor);
                         System.out.print("Precio/Kg: ");
                         valor = Metodos.validarDouble(scan);
                         carro.get(index).setPrecioKg(valor);
-                        carro.get(index)
-                                .setPrecio(calcularPrecio(carro.get(index).getPrecioKg(), carro.get(index).getPeso()));
+                        carro.get(index).setPrecio(calcularPrecio(carro.get(index).getPrecioKg(), carro.get(index).getPeso()));
                         validar = true;
                         break;
                     default:
@@ -225,7 +222,7 @@ public class Alimentos {
             }
 
         }
-        System.out.println("------------------------------------------------------------");
+        System.out.println(SEPARADOR);
 
     }
 
@@ -250,7 +247,7 @@ public class Alimentos {
                 System.out.println("Uy! Casi lo borramos pero lo hemos evitado.");
             }
         }
-        System.out.println("------------------------------------------------------------");
+        System.out.println(SEPARADOR);
 
     }
 
@@ -258,7 +255,7 @@ public class Alimentos {
 
         System.out.println();
         System.out.println("¿Que quieres modificar en el/la " + nombre + ": ");
-        System.out.println("------------------------------------------------------");
+        System.out.println(SEPARADOR);
         System.out.println("1.Nombre");
         System.out.println("2.Origen");
         System.out.println("3.Peso");
@@ -305,25 +302,3 @@ public class Alimentos {
         }
     }
 }
-
-// Se propone que sean objetos Comida: nombre, origen, peso, precio.
-
-// Instructions
-// Tienes un carrito de la compra donde puedas añadir, leer, modificar, borrar y
-// BUSCAR elementos.
-// Crear menú con opciones. Si opción = ‘salir’ u opción 0, se acaba el
-// programa.
-
-// Se aconseja en este caso realizar un switch dentro de un while. El switch
-// sobre las opciones del menú del tipo:
-// 1- Añadir comida (implica añadir por teclado todas las características del
-// objeto)
-// 2- Mostrar lista completa
-// 3- Mostrar un producto específico por nombre (implica opción buscar)
-// 4- Modificar por nombre. ¿Cuál quieres modificar? (implica opción buscar)
-// 5- Borrar elemento por nombre (implica opción buscar)
-// 0- Salir
-// Para buscar, se aconseja el método equalsIgnoreCase().
-// +EXTRA: posibilidad de mover un elemento a otro lugar de la lista, sin borrar
-// el que había
-// *EXTRA: calcular precio final del producto según su peso y precio/Kg
