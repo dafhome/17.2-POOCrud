@@ -69,13 +69,3 @@ public class App {
         System.out.print("Opcion: ");
     }
 }
-
-// Se aconseja en este caso realizar un switch dentro de un while. El switch
-// sobre las opciones del menú del tipo:
-// 1- Añadir comida (implica añadir por teclado todas las características del
-// objeto)
-// 2- Mostrar lista completa
-// 3- Mostrar un producto específico por nombre (implica opción buscar)
-// 4- Modificar por nombre. ¿Cuál quieres modificar? (implica opción buscar)
-// 5- Borrar elemento por nombre (implica opción buscar)
-// 0- Salir
