@@ -1,5 +1,3 @@
-# 17.2-POOCrud
- 
 Instructions
 Tienes un carrito de la compra donde puedas añadir, leer, modificar, borrar y BUSCAR elementos.
 Crear menú con opciones. Si opción = ‘salir’ u opción 0, se acaba el programa.
