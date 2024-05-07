@@ -79,6 +79,8 @@ public class Alimentos {
         double precioKg;
 
         System.out.println();
+        System.out.println("Añadir Alimento");
+        System.out.println();
         System.out.println("Vamos a añadir un alimento.");
         System.out.print("Alimento: ");
         alimento = scan.nextLine();
@@ -95,7 +97,7 @@ public class Alimentos {
 
     public static void showAll(ArrayList<Alimentos> carro) {
         System.out.println();
-        System.out.println("Mostrar todo:");
+        System.out.println("Mostrar todos los Alimentos");
         System.out.println();
         for (Alimentos alimento : carro) {
             System.out.println(alimento);
@@ -106,7 +108,8 @@ public class Alimentos {
     }
 
     public static void searchAlimento(Scanner scan, ArrayList<Alimentos> carro) {
-
+        System.out.println();
+        System.out.println("Buscar Alimento");
         System.out.println();
         System.out.print("Alimento:");
         String buscar = scan.nextLine();
@@ -130,6 +133,7 @@ public class Alimentos {
         } else {
             System.out.println("No he encontrado ningún alimento con este nombre.");
         }
+        System.out.println("------------------------------------------------------------");
     }
 
     private static int searchAlimentoReturn(Scanner scan, ArrayList<Alimentos> carro) {
@@ -156,6 +160,8 @@ public class Alimentos {
     }
 
     public static void modifyAlimento(Scanner scan, ArrayList<Alimentos> carro) {
+        System.out.println();
+        System.out.println("Modificar Alimento");
         int index = searchAlimentoReturn(scan, carro);
         double valor = 0f;
         if (index == -2) {
@@ -219,9 +225,13 @@ public class Alimentos {
             }
 
         }
+        System.out.println("------------------------------------------------------------");
+
     }
 
     public static void removeAlimento(Scanner scan, ArrayList<Alimentos> carro) {
+        System.out.println();
+        System.out.println("Eliminar Alimento");
         int index = searchAlimentoReturn(scan, carro);
         if (index == -2) {
             System.out.println("Lo siento, hemos encontrado más de un alimento a modificar.");
@@ -240,6 +250,8 @@ public class Alimentos {
                 System.out.println("Uy! Casi lo borramos pero lo hemos evitado.");
             }
         }
+        System.out.println("------------------------------------------------------------");
+
     }
 
     public static void menuModify(String nombre) {
@@ -257,6 +269,8 @@ public class Alimentos {
     }
 
     public static void moveAlimento(Scanner scan, ArrayList<Alimentos> carro) {
+        System.out.println();
+        System.out.println("Mover Alimento");
         int index = searchAlimentoReturn(scan, carro);
         int newIndex = 0;
         if (index == -2) {

@@ -13,6 +13,7 @@ public class App {
         tienda.add(a2);
         tienda.add(a3);
 
+        System.out.println();
         System.out.println("Bienvenido a la tienda de alimentación");
         System.out.println("------------------------------------------------------------");
         int opcion = 0;
@@ -39,6 +40,8 @@ public class App {
                     break;
                 case 6:
                     Alimentos.moveAlimento(scan, tienda);
+                    System.out.println("------------------------------------------------------------");
+
                     break;
                 case 0:
                     validar = true;
